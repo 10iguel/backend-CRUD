@@ -59,6 +59,11 @@ const BootcampSchema = new mongoose.Schema({
                 'Mobile Development',
                 'Data Science', 'Other']
     },
+    averageCost: {
+        type: Number,
+        min: [1, 'Rating must be at least 1'],
+        max: [10, 'Rating can not be more than 10']
+    },
     housing: {
         type: Boolean,
         default: false
@@ -74,6 +79,10 @@ const BootcampSchema = new mongoose.Schema({
     acceptGi: {
         type: Boolean,
         default: false
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 })
 

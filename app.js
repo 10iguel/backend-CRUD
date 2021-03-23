@@ -12,6 +12,8 @@ const bootcamps = require('./routes/bootcamp')
 
 const app = express()
 
+app.use(express.json())
+
 
 app.use('/api/v1/bootcamps', bootcamps)
 //Create a CRUD for the data you were given
