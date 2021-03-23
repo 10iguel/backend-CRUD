@@ -46,7 +46,7 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
 
 //Update Bootcamp
 
-exports.getBootcamp = asyncHandler(async (req, res, next) => {
+exports.updateBootcamp = asyncHandler(async (req, res, next) => {
     let bootcamp = await Bootcamp.findById(req.params.id)
     if (!bootcamp) {
         return next(new ErrorResponse(`Bootcamp not found with the id of ${req.params.id}`, 404))
@@ -60,5 +60,19 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
     await res.status(200).json({
         result: bootcamp,
         success: true
+    })
+})
+
+//Deleting Bootcamp
+exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
+    const bootcamp = await Bootcamp.findById(req.params.id)
+    if (!bootcamp) {
+        return next(new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404))
+    }
+    bootcamp.remove()
+
+    await res.status(200).json({
+        success: true,
+        data: {}
     })
 })

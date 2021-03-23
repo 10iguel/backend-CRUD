@@ -11,6 +11,14 @@ router.get('/', bootcampController.getBootcamps)
 // get single bootcamp
 router.get('/:id', bootcampController.getBootcamp)
 
+//creating bootcamp
 router.post('/', bootcampController.createBootcamp)
+
+//updating bootcamp
+router.put('/:id', bootcampController.updateBootcamp)
+
+//deleting bootcamp
+router.delete('/:id', bootcampController.deleteBootcamp)
+
 
 module.exports = router
