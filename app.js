@@ -9,6 +9,10 @@ dotenv.config({path: './config/config.env'})
 connectDB()
 
 const bootcamps = require('./routes/bootcamp')
+const courses = require('./routes/courses')
+const auth = require('./routes/auth')
+const users = require('./routes/user')
+const reviews = require('./routes/reviews')
 
 
 const app = express()
@@ -21,6 +25,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use('/api/v1/bootcamps', bootcamps)
+app.use('/api/v1/auht', auth)
+app.use('/api/v1/bootcamps', users)
 //Create a CRUD for the data you were given
 
 const PORT = process.env.PORT || 4550

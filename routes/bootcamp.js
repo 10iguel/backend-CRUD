@@ -1,6 +1,6 @@
 const express = require('express')
 const {body} = require('express-validator/check')
-const bootcampController = require('../controllers/bootcamp')
+const bootcampController = require('../controllers/bootcamps')
 
 
 const router = express.Router()
