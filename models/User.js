@@ -60,7 +60,7 @@ UserSchema.methods.matchPassword = async function (enteredPassword) {
 
 
 //Generate and hash password token
-UserSchema.methods.generateResetToken = function () {
+UserSchema.methods.getResetPasswordToken = function () {
     //generate token
     const restToken = crypto.randomBytes(20).toString('hex')
 
